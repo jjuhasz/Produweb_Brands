@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Produweb_Brands>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Produweb_Brands>
+    </modules>
+</config>

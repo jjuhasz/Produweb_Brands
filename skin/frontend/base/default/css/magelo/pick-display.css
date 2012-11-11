@@ -1,0 +1,17 @@
+.graphic-item{ overflow: hidden; }
+
+.graphic-item .a-bar,
+.graphic-item .b-bar{
+	height: 30px; 
+	line-height: 30px; 
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+}
+
+
+.graphic-item .a-bar{ background-color: #F00; float: left; }
+.graphic-item .b-bar{ background-color: #00F; float: right; }
+
+.graphic-item .winbar{ background: url('../../images/magelo/bg-win-bar.jpg') top left repeat-x; color: #375f33;  }
+.graphic-item .loosebar{ background: url('../../images/magelo/bg-loose-bar.jpg') top left repeat-x; color: #7a091a;  }

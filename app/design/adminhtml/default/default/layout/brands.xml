@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <adminhtml_brands_brands_index>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>Manage Brands</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>brands/brand</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="brands/adminhtml_brand" name="brands_list">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_brands_brands_index>
+
+   <adminhtml_brands_brands_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="brands/adminhtml_brand_edit" name="brand_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"/>
+            <block type="brands/adminhtml_brand_edit_tabs" name="brand_tabs"/>
+        </reference>
+    </adminhtml_brands_brands_edit>
+</layout>

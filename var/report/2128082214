@@ -1,0 +1,9 @@
+a:5:{i:0;s:204:"Error in file: "C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\local\Produweb\Brands\sql\brands_setup\mysql4-install-0.1.0.php" - This is an exception to stop the installer from completing";i:1;s:1180:"#0 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\Resource\Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\Resource\Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '0.1.0')
+#2 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('0.1.0')
+#3 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#6 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\app\Mage.php(683): Mage_Core_Model_App->run(Array)
+#7 C:\Users\Jona\Documents\Aptana Studio 3 Workspace\ABS\index.php(87): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:1:"/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

@@ -1,0 +1,30 @@
+
+<div class="content-header">
+    <h3 class="icon-head head-products"><?php echo $this->getHeader() ?></h3>
+    <p class="content-buttons form-buttons"><?php echo $this->getBackButtonHtml() ?>
+    <?php echo $this->getCancelButtonHtml() ?>
+    <?php if($this->getBrandId()): ?>
+        <?php echo $this->getDeleteButtonHtml() ?>
+    <?php endif; ?>
+    <?php echo $this->getSaveButtonHtml() ?>
+    </p>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="brand_edit_form" enctype="multipart/form-data">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div style="display:none"></div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+
+
+Event.observe(window, 'load', function() {
+    var objName = '<?php echo $this->getSelectedTabId() ?>';
+    if (objName) {
+        obj = $(objName);
+        //IE fix (bubbling event model)
+        product_info_tabsJsTabs.setSkipDisplayFirstTab();
+        product_info_tabsJsTabs.showTabContent(obj);
+    }
+});
+//]]>
+</script>
