@@ -10,6 +10,7 @@
         <protozoom translate="label" module="protozoom">
             <tab>produweb</tab>
             <class>separator-top</class>
+            <label>ProtoZoom</label>
             <sort_order>10</sort_order>
             <frontend_type>text</frontend_type>
             <show_in_default>1</show_in_default>
