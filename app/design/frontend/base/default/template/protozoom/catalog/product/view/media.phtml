@@ -2,12 +2,9 @@
 	$_product = $this->getProduct();
 	$_helper = $this->helper('catalog/output');
 	$_protozoom = $this->helper('protozoom');
-	?>
-<?php
 // --- Le produit possède une image, on applique le zoom
 if ($_product->getImage() != 'no_selection' && $_product->getImage()):
 ?>
-
 <div class="product-image">
 	<?php
 	$zoomWidth 	= $_protozoom->getConfig('zoom_width');
@@ -25,31 +22,24 @@ if ($_product->getImage() != 'no_selection' && $_product->getImage()):
 		?>
         <img id="protozoom_base_image" src="<?php echo $baseImgUrl ?>" width="<?php $baseWidth ?>" height="<?php echo $baseHeight ?>" />
     </a>
-
-
 </div>
-
-
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <ul>
 		<?php foreach ($this->getGalleryImages() as $_image): ?>
         <li>
             <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>" rel="{gallery: 'mediagallery', smallimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($baseWidth, $baseHeight); ?>', largeimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>'}" class="proto-thumbnail" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
-				<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbWidth, $thumbHeight); ?>" width="<?php echo $thumbWidth ?>" height="<?php echo $thumbHeight ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+				<img class="imgcolorbox" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbWidth, $thumbHeight); ?>" width="<?php echo $thumbWidth ?>" height="<?php echo $thumbHeight ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
 			</a>
         </li>
 		<?php endforeach; ?>
     </ul>
 </div>
 <?php endif; ?>
-
-
-
 <script type="text/javascript">
 	function initProtozoom()
 	{
-       /* jQuery('.protozoom').jqzoom({
+        jQuery('.protozoom').jqzoom({
             zoomType: '<?php echo $_protozoom->getConfig('jqzoom_zoomtype', 'jqzoom') ?>',
             zoomWidth: <?php echo $_protozoom->getConfig('jqzoom_zoomwidth', 'jqzoom') ?>,
             zoomHeight: <?php echo $_protozoom->getConfig('jqzoom_zoomheight', 'jqzoom') ?>,
@@ -65,23 +55,21 @@ if ($_product->getImage() != 'no_selection' && $_product->getImage()):
             hideEffect: '<?php echo $_protozoom->getConfig('jqzoom_hideeffect', 'jqzoom') ?>',
             fadeinSpeed: '<?php echo $_protozoom->getConfig('jqzoom_fadeinspeed', 'jqzoom') ?>',
             fadeoutSpeed: '<?php echo $_protozoom->getConfig('jqzoom_fadeoutspeed', 'jqzoom') ?>'
-        });*/
-		//jQuery('.proto-thumbnail').click(function(){
-            jQuery('.proto-thumbnail').colorbox({
-				href:jQuery(this).attr('href'),
-				rel: 'proto-thumbnail',
-				maxWidth: <?php echo $_protozoom->getConfig('maxwidth', 'colorbox') ?>,
-				maxHeight: <?php echo $_protozoom->getConfig('maxheight', 'colorbox') ?>,
-				transition: '<?php echo $_protozoom->getConfig('transition', 'colorbox') ?>',
-				speed: '<?php echo $_protozoom->getConfig('speed', 'colorbox') ?>',
-				opacity: <?php echo $_protozoom->getConfig('opacity', 'colorbox') ?>
-			});
-		//});
+        });
+		jQuery('.protozoom').click(function(){
+            jQuery.colorbox({
+                //href:jQuery(this).attr('href'),
+                rel: 'proto-thumbnail',
+                maxWidth: <?php echo $_protozoom->getConfig('maxwidth', 'colorbox') ?>,
+                maxHeight: <?php echo $_protozoom->getConfig('maxheight', 'colorbox') ?>,
+                transition: '<?php echo $_protozoom->getConfig('transition', 'colorbox') ?>',
+                speed: '<?php echo $_protozoom->getConfig('speed', 'colorbox') ?>',
+                opacity: <?php echo $_protozoom->getConfig('opacity', 'colorbox') ?>
+            });
+		});
 	}
     jQuery(document).ready(function(){
         initProtozoom();
     });
 </script>
-
-
 <?php endif; ?>
