@@ -6,14 +6,9 @@
 <?php
 // --- Le produit possède une image, on applique le zoom
 if ($_product->getImage() != 'no_selection' && $_product->getImage()):
-
-	// on à besoin d'une medium (base) image + grande image dans le zoom
-
-
-	?>
+?>
 
 <div class="product-image">
-
 	<?php
 	$zoomWidth 	= $_protozoom->getConfig('zoom_width');
 	$zoomHeight = $_protozoom->getConfig('zoom_height');
@@ -40,7 +35,7 @@ if ($_product->getImage() != 'no_selection' && $_product->getImage()):
     <ul>
 		<?php foreach ($this->getGalleryImages() as $_image): ?>
         <li>
-            <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>" rel="{gallery: 'mediagallery', smallimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($baseWidth, $baseHeight); ?>', largeimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>'}" class="proto-thumbnail" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+            <a rel="{gallery: 'mediagallery', smallimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($baseWidth, $baseHeight); ?>', largeimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>'}" class="proto-thumbnail" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
 				<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbWidth, $thumbHeight); ?>" width="<?php echo $thumbWidth ?>" height="<?php echo $thumbHeight ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
 			</a>
         </li>
