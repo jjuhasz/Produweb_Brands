@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <produweb translate="label" module="protozoom">
+            <label>Produweb</label>
+            <sort_order>250</sort_order>
+        </produweb>
+    </tabs>
+    <sections>
+        <protozoom translate="label" module="protozoom">
+            <tab>produweb</tab>
+            <class>separator-top</class>
+            <sort_order>10</sort_order>
+            <frontend_type>text</frontend_type>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <config translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+
+                    </fields>
+                </config>
+            </groups>
+        </protozoom>
+    </sections>
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Produweb_ProtoZoom>
+            <version>0.1.0</version>
+        </Produweb_ProtoZoom>
+    </modules>
+    <global>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product_view_media>Produweb_ProtoZoom_Block_Catalog_Product_View_Media</product_view_media>
+                </rewrite>
+            </catalog>
+            <protozoom>
+                <class>Produweb_ProtoZoom_Block</class>
+            </protozoom>
+        </blocks>
+        <helpers>
+            <protozoom>
+                <class>Produweb_ProtoZoom_Helper</class>
+            </protozoom>
+        </helpers>
+    </global>
+</config>
