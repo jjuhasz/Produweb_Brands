@@ -1,0 +1,90 @@
+<?php
+	$_product = $this->getProduct();
+	$_helper = $this->helper('catalog/output');
+	$_protozoom = $this->helper('protozoom');
+	?>
+<?php
+// --- Le produit possède une image, on applique le zoom
+if ($_product->getImage() != 'no_selection' && $_product->getImage()):
+
+	// on à besoin d'une medium (base) image + grande image dans le zoom
+
+
+	?>
+
+<div class="product-image">
+
+	<?php
+	$zoomWidth 	= $_protozoom->getConfig('zoom_width');
+	$zoomHeight = $_protozoom->getConfig('zoom_height');
+	$baseWidth 	= $_protozoom->getConfig('baseimage_width');
+	$baseHeight = $_protozoom->getConfig('baseimage_height');
+	$thumbWidth 	= $_protozoom->getConfig('thumbnail_width');
+	$thumbHeight = $_protozoom->getConfig('thumbnail_height');
+
+	$zoomImgUrl = $this->helper('catalog/image')->init($_product, 'image')->resize($zoomWidth, $zoomHeight);
+	?>
+    <a id="protozoom_link" rel="mediagallery" href="<?php echo $zoomImgUrl ?>" class="protozoom colorbox" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+		<?php
+        $baseImgUrl = $this->helper('catalog/image')->init($_product, 'image')->resize($baseWidth, $baseHeight);
+		?>
+        <img id="protozoom_base_image" src="<?php echo $baseImgUrl ?>" width="<?php $baseWidth ?>" height="<?php echo $baseHeight ?>" />
+    </a>
+
+
+</div>
+
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <ul>
+		<?php foreach ($this->getGalleryImages() as $_image): ?>
+        <li>
+            <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>" rel="{gallery: 'mediagallery', smallimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($baseWidth, $baseHeight); ?>', largeimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>'}" class="proto-thumbnail" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+				<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbWidth, $thumbHeight); ?>" width="<?php echo $thumbWidth ?>" height="<?php echo $thumbHeight ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+			</a>
+        </li>
+		<?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+
+
+<script type="text/javascript">
+	function initProtozoom()
+	{
+        jQuery('.protozoom').jqzoom({
+            zoomType: '<?php echo $_protozoom->getConfig('jqzoom_zoomtype', 'jqzoom') ?>',
+            zoomWidth: <?php echo $_protozoom->getConfig('jqzoom_zoomwidth', 'jqzoom') ?>,
+            zoomHeight: <?php echo $_protozoom->getConfig('jqzoom_zoomheight', 'jqzoom') ?>,
+            xOffset: <?php echo $_protozoom->getConfig('jqzoom_xoffset', 'jqzoom') ?>,
+            yOffset: <?php echo $_protozoom->getConfig('jqzoom_yoffset', 'jqzoom') ?>,
+            position: '<?php echo $_protozoom->getConfig('jqzoom_position', 'jqzoom') ?>',
+            preloadImages: <?php echo $_protozoom->getConfig('jqzoom_preloadimages', 'jqzoom') ?>,
+            preloadText: '<?php echo $_protozoom->getConfig('jqzoom_preloadtext', 'jqzoom') ?>',
+            title: <?php echo $_protozoom->getConfig('jqzoom_title', 'jqzoom') ?>,
+            lens: <?php echo $_protozoom->getConfig('jqzoom_lens', 'jqzoom') ?>,
+            imageOpacity: <?php echo $_protozoom->getConfig('jqzoom_imageopacity', 'jqzoom') ?>,
+            showEffect: '<?php echo $_protozoom->getConfig('jqzoom_showeffect', 'jqzoom') ?>',
+            hideEffect: '<?php echo $_protozoom->getConfig('jqzoom_hideeffect', 'jqzoom') ?>',
+            fadeinSpeed: '<?php echo $_protozoom->getConfig('jqzoom_fadeinspeed', 'jqzoom') ?>',
+            fadeoutSpeed: '<?php echo $_protozoom->getConfig('jqzoom_fadeoutspeed', 'jqzoom') ?>'
+        });
+		jQuery('.colorbox').click(function(){
+            jQuery.colorbox({
+				href:jQuery(this).attr('href'),
+				rel: 'proto-thumbnail',
+				title: jQuery(this).attr('title'),
+				maxWidth: 800,
+				maxHeight: 600
+			});
+		});
+	}
+    jQuery(document).ready(function(){
+        initProtozoom();
+    });
+</script>
+
+
+<?php endif; ?>

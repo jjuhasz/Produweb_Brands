@@ -21,5 +21,19 @@
                 <class>Produweb_ProtoZoom_Helper</class>
             </protozoom>
         </helpers>
+        <models>
+            <protozoom>
+                <class>Produweb_ProtoZoom_Model</class>
+            </protozoom>
+        </models>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <protozoom>
+                    <file>protozoom.xml</file>
+                </protozoom>
+            </updates>
+        </layout>
+    </frontend>
 </config>

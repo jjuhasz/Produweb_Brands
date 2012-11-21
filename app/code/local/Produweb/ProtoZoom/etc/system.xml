@@ -25,9 +25,213 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-
+                        <baseimage_width>
+                            <label>Base Image Largeur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </baseimage_width>
+                        <baseimage_height>
+                            <label>Base Image Hauteur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </baseimage_height>
+                        <zoom_width>
+                            <label>Zoom Image Largeur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_width>
+                        <zoom_height>
+                            <label>Zoom Image Hauteur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_height>
+                        <thumbnail_width>
+                            <label>Vignettes Largeur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbnail_width>
+                        <thumbnail_height>
+                            <label>Vignettes Hauteur</label>
+                            <comment>en pixels sans 'px'</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbnail_height>
                     </fields>
                 </config>
+                <jqzoom>
+                    <label>Configuration JQZoom</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <jqzoom_zoomtype>
+                            <label>Zoom type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>protozoom/system_config_source_zoomtype</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_zoomtype>
+                        <jqzoom_zoomwidth>
+                            <label>Zoom Width</label>
+                            <comment>The popup window width showing the zoomed area.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_zoomwidth>
+                        <jqzoom_zoomheight>
+                            <label>Zoom height</label>
+                            <comment>The popup window height showing the zoomed area.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_zoomheight>
+                        <jqzoom_xoffset>
+                            <label>X Offest</label>
+                            <comment>The popup window x offset from the small image. (always positive to move the popup window more on the right if position is "right" or more on the left if position is "left")</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_xoffset>
+                        <jqzoom_yoffset>
+                            <label>Y Offset</label>
+                            <comment>The popup window y offset from the small image. (always positive to move the popup window more on the top if position is "top" or more on the bottom if position is "bottom")</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_yoffset>
+                        <jqzoom_position>
+                            <label>Position</label>
+                            <comment>The popup window position.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>protozoom/system_config_source_position</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_position>
+                        <jqzoom_preloadimages>
+                            <label>Preload Images</label>
+                            <comment>If set to true,jqzoom will preload large images.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_preloadimages>
+                        <jqzoom_preloadtext>
+                            <label>Preload Text</label>
+                            <comment>The text to show while preloading images.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_preloadtext>
+                        <jqzoom_title>
+                            <label>Title</label>
+                            <comment>Show a small title over the zoomed window it can be the anchor title and if not specified,it will get the small image title.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_title>
+                        <jqzoom_lens>
+                            <label>Lens</label>
+                            <comment>if set to false,the small lens,over the image, won't show.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_lens>
+                        <jqzoom_imageopacity>
+                            <label>Image Opacity</label>
+                            <comment>Set the image opacity when the 'zoomType' option is set to 'reverse'.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_imageopacity>
+                        <jqzoom_showeffect>
+                            <label>Show Effet</label>
+                            <comment>The effect by which hiding the popup window.Options available: 'show' ,'fadein'.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>protozoom/system_config_source_showeffect</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_showeffect>
+                        <jqzoom_hideeffect>
+                            <label>Hide Effet</label>
+                            <comment>The effect by which showing the popup window.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>protozoom/system_config_source_hideeffect</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_hideeffect>
+                        <jqzoom_fadeinspeed>
+                            <label>FadeIn Speed</label>
+                            <comment>Changes fade in speed,in case the showEffect option is set to 'fadein'.(options: 'fast','slow',number)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_fadeinspeed>
+                        <jqzoom_fadeoutspeed>
+                            <label>FadeOut Speed</label>
+                            <comment>Changes fade out speed,in case the hideEffect option is set to 'fadeout'.(options: 'fast','slow',number)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jqzoom_fadeoutspeed>
+                    </fields>
+                </jqzoom>
             </groups>
         </protozoom>
     </sections>

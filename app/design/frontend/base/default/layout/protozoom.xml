@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addJs"><script>protozoom/jquery-1.8.3.js</script></action>
+            <action method="addJs"><script>protozoom/jquery.noconflict.js</script></action>
+            <action method="addJs"><script>protozoom/jquery.jqzoom.js</script></action>
+            <action method="addJs"><script>protozoom/jquery.colorbox.js</script></action>
+            <action method="addCss"><stylesheet>css/protozoom/jquery.jqzoom.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/protozoom/colorbox.css</stylesheet></action>
+        </reference>
+    </catalog_product_view>
+</layout>
