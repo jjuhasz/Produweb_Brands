@@ -29,7 +29,7 @@ if ($_product->getImage() != 'no_selection' && $_product->getImage()):
 		<?php foreach ($this->getGalleryImages() as $_image): ?>
 
         <li>
-            <a class="no-display colorboxitem" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><?php echo $_image->getLabel() ?></a>
+            <a class="no-display colorboxitem" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $_product->getName() ?></a>
             <a rel="{gallery: 'mediagallery', smallimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($baseWidth, $baseHeight); ?>', largeimage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($zoomWidth, $zoomHeight); ?>'}" class="proto-thumbnail" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
 				<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbWidth, $thumbHeight); ?>" width="<?php echo $thumbWidth ?>" height="<?php echo $thumbHeight ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
 			</a>
