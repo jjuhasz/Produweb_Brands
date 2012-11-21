@@ -232,6 +232,61 @@
                         </jqzoom_fadeoutspeed>
                     </fields>
                 </jqzoom>
+                <colorbox>
+                    <label>Configuration Colorbox</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <transition>
+                            <label>Transition</label>
+                            <comment>The transition type. Can be set to "elastic", "fade", or "none".</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </transition>
+                        <maxwidth>
+                            <label>Max Width</label>
+                            <comment>The lightbox max width.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maxwidth>
+                        <maxheight>
+                            <label>Max height</label>
+                            <comment>The lightbox max height.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maxheight>
+                        <speed>
+                            <label>Speed</label>
+                            <comment>Sets the speed of the fade and elastic transitions, in milliseconds.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </speed>
+                        <opacity>
+                            <label>Opacity</label>
+                            <comment>The overlay opacity level. Range: 0 to 1.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </opacity>
+                    </fields>
+                </colorbox>
             </groups>
         </protozoom>
     </sections>

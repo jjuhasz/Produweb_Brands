@@ -70,9 +70,11 @@ if ($_product->getImage() != 'no_selection' && $_product->getImage()):
             jQuery.colorbox({
 				href:jQuery(this).attr('href'),
 				rel: 'proto-thumbnail',
-				title: jQuery(this).attr('title'),
-				maxWidth: 800,
-				maxHeight: 600
+				maxWidth: <?php echo $_protozoom->getConfig('maxwidth', 'colorbox') ?>,
+				maxHeight: <?php echo $_protozoom->getConfig('maxheight', 'colorbox') ?>,
+				transition: '<?php echo $_protozoom->getConfig('transition', 'colorbox') ?>',
+				speed: '<?php echo $_protozoom->getConfig('speed', 'colorbox') ?>',
+				opacity: <?php echo $_protozoom->getConfig('opacity', 'colorbox') ?>
 			});
 		});
 	}
