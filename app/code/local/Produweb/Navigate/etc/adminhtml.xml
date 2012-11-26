@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <navigate>
+            <title>Navigate</title>
+            <sort_order>46</sort_order>
+            <children>
+                <manage_menus>
+                    <title>Manage Menus</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/navigate_menu/index</action>
+                </manage_menus>
+            </children>
+        </navigate>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <navigate>
+                        <children>
+                            <manage_menus>
+                                <sort_order>10</sort_order>
+                            </manage_menus>
+                        </children>
+                    </navigate>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
