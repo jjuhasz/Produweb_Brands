@@ -13,8 +13,6 @@ class Produweb_Navigate_Block_Adminhtml_Menu extends Mage_Adminhtml_Block_Widget
 
 	/**
 	 * Prepare button and grid
-	 *
-	 * @return Produweb_Brands_Block_Adminhtml_Brand
 	 */
 	protected function _prepareLayout()
 	{
